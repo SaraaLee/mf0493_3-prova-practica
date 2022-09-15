@@ -12,7 +12,7 @@ Vue.createApp({
         addTodo() {
 
             console.log("Add: ", this.addTaskName)
-
+            
             // Actualizamos el estado
             const id = uuid.v1();
 
@@ -28,7 +28,9 @@ Vue.createApp({
 
         removeItem(id) {
             console.log(id);
-            this.todos = this.todos; // apartado 3
+            this.todos = this.todos.filter(item => item.id != id)
+             // apartado 3
+            
         },
 
         toggleCompleted(id) {
